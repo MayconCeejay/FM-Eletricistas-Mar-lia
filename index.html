@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>FM Eletricistas | Elétrica · Automação · Segurança Eletrônica</title>
+  
+  <!-- FAVICON - VÁRIOS TAMANHOS PARA APARECER MELHOR -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon-128.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+  
+  <!-- FALLBACK: se nenhuma das acima funcionar -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: url('assets/images/fundo.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: #1A2C38;
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(244, 247, 252, 0.88);
+      z-index: -1;
+    }
+
+    :root {
+      --primary-dark: #0A2F3F;
+      --primary-medium: #15576B;
+      --accent-gold: #F5A623;
+      --accent-gold-light: #FFC043;
+      --card-white: #FFFFFF;
+      --text-soft: #2C4A5E;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    .main-header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 100;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    /* LOGO */
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      max-height: none;
+      height: auto;
+      overflow: visible;
+      margin-top: 35px;
+      padding: 15px 0;
+    }
+
+    .logo-area img {
+      width: auto;
+      height: 300px;
+      object-fit: contain;
+      object-position: left center;
+      display: block;
+      max-width: none;
+      max-height: none;
+    }
+
+    .logo-placeholder {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+    }
+
+    .logo-placeholder i {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+    }
+
+    .logo-placeholder span {
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+
+    /* MENU */
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-menu .btn-contato {
+      background: var(--accent-gold);
+      color: var(--primary-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .nav-menu .btn-contato:hover {
+      background: #FFC043;
+      color: #0A2F3F;
+    }
+
+    /* HERO */
+    .hero {
+      background-image: linear-gradient(135deg, rgba(10, 47, 63, 0.85) 0%, rgba(21, 87, 107, 0.85) 100%), url('assets/images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 0 0 3rem 0;
+      margin: 0;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .hero-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-top: 1rem;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .hero-text h1 i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+
+    .hero-text .tagline {
+      font-size: 1.2rem;
+      margin-top: 0.8rem;
+      opacity: 0.95;
+      font-weight: 400;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(245,166,35,0.3);
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+
+    .hero-badge i {
+      margin-right: 8px;
+      color: var(--accent-gold);
+    }
+
+    /* AVATAR - SEM CAIXA, APENAS A IMAGEM SOLTA */
+    .hero-avatar {
+      flex-shrink: 0;
+      width: 300px;
+    }
+
+    .hero-avatar img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-avatar img:hover {
+      transform: scale(1.02);
+    }
+
+    /* SEÇÃO DE SERVIÇOS */
+    section {
+      padding: 4rem 0 2rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      width: 100%;
+    }
+
+    .section-title span {
+      background: linear-gradient(120deg, var(--primary-dark), var(--primary-medium));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      border-bottom: 4px solid var(--accent-gold);
+      padding-bottom: 8px;
+    }
+
+    /* GRID DOS SERVIÇOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    /* CARDS */
+    .service-card {
+      background: var(--card-white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px solid #E2E8F0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(10,47,63,0.2);
+      border-color: var(--accent-gold-light);
+    }
+
+    .card-header {
+      background: var(--primary-dark);
+      padding: 1rem 1.5rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header i {
+      font-size: 1.7rem;
+      color: var(--accent-gold);
+    }
+
+    .card-header h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .service-list {
+      padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+      flex: 1;
+    }
+
+    .service-list ul {
+      list-style: none;
+    }
+
+    .service-list li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      border-bottom: 1px dashed #E9EDF2;
+      padding-bottom: 0.6rem;
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .service-list li i {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      width: 20px;
+    }
+
+    .badge-feature {
+      background: #FEF3E2;
+      color: #B45F06;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      margin-left: 8px;
+      display: inline-block;
+    }
+
+    /* SLIDER - MESMA ALTURA DO CARD */
+    .slider-container {
+      background: var(--card-white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Botões do slider - só aparecem se tiver mais de 1 imagem */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 47, 63, 0.7);
+      color: var(--accent-gold);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .slider-btn:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    /* Esconder botões quando não houver mais de 1 imagem */
+    .slider-container.single-image .slider-btn {
+      display: none;
+    }
+
+    /* Indicadores/pontinhos - só aparecem se tiver mais de 1 imagem */
+    .slider-dots {
+      text-align: center;
+      padding: 10px 0;
+      background: white;
+      border-top: 1px solid #E2E8F0;
+    }
+
+    .slider-container.single-image .slider-dots {
+      display: none;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background-color: var(--accent-gold);
+      width: 20px;
+      border-radius: 10px;
+    }
+
+    /* DIFERENCIAIS */
+    .diff-bubbles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin: 3rem 0 2rem;
+    }
+
+    .diff-item {
+      background: white;
+      border-radius: 60px;
+      padding: 0.6rem 1.4rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    .diff-item i {
+      color: var(--accent-gold);
+      margin-right: 6px;
+    }
+
+    .cta-section {
+      background: linear-gradient(100deg, #EFF3F8 0%, #FFFFFF 100%);
+      border-radius: 2rem;
+      margin: 2rem 0 3rem 0;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #DCE5EC;
+    }
+
+    .cta-section h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--primary-dark);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+    }
+
+    .btn:hover {
+      background: #08303F;
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #CDDFE6;
+      padding: 2rem 0;
+      text-align: center;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+      font-size: 0.85rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      cursor: pointer;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close-modal:hover {
+      color: var(--accent-gold);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 992px) {
+      .header-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .main-header {
+        height: auto;
+        padding: 8px 0;
+      }
+      
+      .logo-area img {
+        height: 35px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-text .tagline {
+        font-size: 1rem;
+      }
+      
+      .hero-avatar {
+        width: 150px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 1.6rem; }
+      .section-title { font-size: 1.5rem; }
+      
+      .logo-area img {
+        height: 30px;
+      }
+      
+      .nav-menu {
+        gap: 0.8rem;
+      }
+      
+      .nav-menu a {
+        font-size: 0.8rem;
+      }
+      
+      .nav-menu .btn-contato {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      
+      .hero-text .tagline {
+        font-size: 0.9rem;
+      }
+      
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .hero-text {
+        text-align: center;
+      }
+      
+      .hero-text .tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .hero-avatar {
+        margin-top: 1.5rem;
+        width: 120px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-content { max-width: 95%; }
+      .close-modal { font-size: 30px; top: 10px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5514997991228?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20serviços%20Elétricos." class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo-area">
+      <img src="assets/images/logo.png" alt="FM Eletricistas Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=logo-placeholder><i class=fas fa-bolt></i><span>FM</span></div>'">
+    </div>
+    <nav class="nav-menu">
+      <a href="#">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato" class="btn-contato">Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>
+        <i class="fas fa-microchip"></i> Elétrica · Automação · <br>Segurança Eletrônica
+      </h1>
+      <div class="tagline">
+        <i class="fas fa-charging-station"></i> Soluções inteligentes para sua casa, comércio ou indústria.<br>
+        Tecnologia, segurança e eficiência com padrão de excelência para toda Região de Marília.
+      </div>
+      <div class="hero-badge">
+        <i class="fas fa-clock"></i> Atendimento 24h • Emergência elétrica
+      </div>
+    </div>
+    
+    <!-- AVATAR - SEM CAIXA, APENAS A IMAGEM -->
+    <div class="hero-avatar">
+      <img src="assets/images/avatar.png" alt="Avatar FM Eletricistas" onerror="this.src='https://via.placeholder.com/220x220?text=Avatar'">
+    </div>
+  </div>
+</div>
+
+<main class="container" id="servicos">
+  <section>
+    <div class="section-title">
+      <span>🛠️ NOSSOS SERVIÇOS COMPLETOS</span>
+    </div>
+    
+    <!-- PRIMEIRA LINHA -->
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card" data-image="assets/images/servicos/instalacoes-eletricas.jpg">
+        <div class="card-header"><i class="fas fa-bolt"></i><h3>⚡ Instalações Elétricas</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Instalação elétrica residencial</li>
+          <li><i class="fas fa-check-circle"></i> Instalação elétrica comercial</li>
+          <li><i class="fas fa-check-circle"></i> Padrão de entrada (poste / relógio)</li>
+          <li><i class="fas fa-check-circle"></i> Troca de fiação antiga</li>
+          <li><i class="fas fa-check-circle"></i> Quadros de distribuição</li>
+          <li><i class="fas fa-check-circle"></i> Disjuntores e proteção</li>
+        </ul></div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="service-card" data-image="assets/images/servicos/automacao.jpg">
+        <div class="card-header"><i class="fas fa-microchip"></i><h3>🧠 Automação</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Automação residencial (casa inteligente)</li>
+          <li><i class="fas fa-check-circle"></i> Controle por celular (luzes, portão, etc)</li>
+          <li><i class="fas fa-check-circle"></i> Sensores de presença</li>
+          <li><i class="fas fa-check-circle"></i> Temporizadores</li>
+          <li><i class="fas fa-check-circle"></i> Integração com assistentes <span class="badge-feature">Alexa/Google</span></li>
+        </ul></div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="service-card" data-image="assets/images/servicos/seguranca-eletronica.jpg">
+        <div class="card-header"><i class="fas fa-video"></i><h3>🎥 Segurança Eletrônica</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Instalação de câmeras (CFTV)</li>
+          <li><i class="fas fa-check-circle"></i> DVR / NVR</li>
+          <li><i class="fas fa-check-circle"></i> Monitoramento remoto pelo celular</li>
+          <li><i class="fas fa-check-circle"></i> Sistemas de alarme</li>
+        </ul></div>
+      </div>
+    </div>
+    
+    <!-- SEGUNDA LINHA -->
+    <div class="services-grid" style="margin-top: 1.8rem;">
+      <!-- Card 4 -->
+      <div class="service-card" data-image="assets/images/servicos/portoes-automaticos.jpg">
+        <div class="card-header"><i class="fas fa-gate"></i><h3>🚪 Portões Automáticos</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Instalação de motores</li>
+          <li><i class="fas fa-check-circle"></i> Manutenção e conserto</li>
+          <li><i class="fas fa-check-circle"></i> Configuração de controles</li>
+          <li><i class="fas fa-check-circle"></i> Ajuste de sensores</li>
+        </ul></div>
+      </div>
+      
+      <!-- Card 5 -->
+      <div class="service-card" data-image="assets/images/servicos/protecao-perimetral.jpg">
+        <div class="card-header"><i class="fas fa-shield-alt"></i><h3>⚡ Proteção Perimetral</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Cerca elétrica</li>
+          <li><i class="fas fa-check-circle"></i> Concertina</li>
+          <li><i class="fas fa-check-circle"></i> Sistema anti-intrusão</li>
+        </ul></div>
+      </div>
+      
+      <!-- Card 6 -->
+      <div class="service-card" data-image="assets/images/servicos/manutencao.jpg">
+        <div class="card-header"><i class="fas fa-tools"></i><h3>🔧 Manutenção e Suporte</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Manutenção preventiva</li>
+          <li><i class="fas fa-check-circle"></i> Conserto de falhas elétricas</li>
+          <li><i class="fas fa-check-circle"></i> Identificação de curto-circuito</li>
+          <li><i class="fas fa-check-circle"></i> Troca de componentes</li>
+        </ul></div>
+      </div>
+    </div>
+    
+    <!-- TERCEIRA LINHA: CARD 7 + SLIDER -->
+    <div class="services-grid" style="margin-top: 1.8rem;">
+      <!-- Card 7: Serviços Comerciais -->
+      <div class="service-card" data-image="assets/images/servicos/servicos-comerciais.jpg">
+        <div class="card-header"><i class="fas fa-building"></i><h3>🏢 Serviços Comerciais</h3></div>
+        <div class="service-list"><ul>
+          <li><i class="fas fa-check-circle"></i> Instalação para lojas e empresas</li>
+          <li><i class="fas fa-check-circle"></i> Iluminação profissional</li>
+          <li><i class="fas fa-check-circle"></i> Infraestrutura elétrica</li>
+          <li><i class="fas fa-check-circle"></i> Organização de cabeamento</li>
+        </ul></div>
+      </div>
+      
+      <!-- SLIDER - OCUPA 2 COLUNAS (vai ser inserido via JS) -->
+      <div id="sliderContainer" class="slider-container"></div>
+    </div>
+  </section>
+  
+  <!-- DIFERENCIAIS -->
+  <div class="diff-bubbles">
+    <div class="diff-item"><i class="fas fa-certificate"></i> Profissionais certificados</div>
+    <div class="diff-item"><i class="fas fa-mobile-alt"></i> Projetos com IoT e automação</div>
+    <div class="diff-item"><i class="fas fa-charging-station"></i> Eficiência energética</div>
+    <div class="diff-item"><i class="fas fa-headset"></i> Suporte técnico especializado</div>
+  </div>
+  
+  <!-- CTA -->
+  <div class="cta-section" id="contato">
+    <h2><i class="fas fa-hard-hat"></i> Soluções elétricas e tecnológicas sob medida</h2>
+    <p style="margin-top: 0.8rem; font-size: 1.1rem; max-width: 650px; margin-left: auto; margin-right: auto;">Atendemos residências, condomínios e empresas com tecnologia de ponta e segurança.</p>
+    <a href="https://wa.me/5514997991228?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20serviços%20Eletricos." class="btn" target="_blank">
+      <i class="fab fa-whatsapp"></i> Falar com especialista
+    </a>
+    <div style="margin-top: 1rem; font-size: 0.85rem;"><i class="fas fa-phone-alt"></i> Atendimento rápido | Presencial e remoto</div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p><i class="fas fa-bolt" style="color: #F5A623;"></i> FM Eletricistas - Elétrica · Automação · Segurança Eletrônica</p>
+    <p>© <span id="currentYear"></span> • Qualidade e inovação em projetos elétricos e tecnológicos.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('currentYear').innerText = new Date().getFullYear();
+  
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const imageUrl = this.getAttribute('data-image');
+      if (imageUrl) {
+        modal.style.display = 'block';
+        modalImg.src = imageUrl;
+      }
+    });
+  });
+  
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+  
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+      closeModal();
+    }
+  });
+  
+  // ========== SLIDER/CARROSSEL DE IMAGENS ==========
+  // LISTA DAS IMAGENS DO SLIDER
+  // ⚠️ ALTERE AQUI OS NOMES DAS SUAS IMAGENS ⚠️
+  const images = [
+    'assets/images/slider/imagem1.jpg',
+    'assets/images/slider/imagem2.jpg',
+    'assets/images/slider/imagem3.jpg',
+    'assets/images/slider/imagem4.jpg',
+    'assets/images/slider/imagem5.jpg'
+  ];
+  
+  // Remove imagens vazias
+  const validImages = images.filter(img => img && img.trim() !== '');
+  
+  let currentIndex = 0;
+  let autoSlideInterval;
+  
+  function initSlider() {
+    const container = document.getElementById('sliderContainer');
+    if (!container) return;
+    
+    // Se não tem imagens, esconde o container
+    if (validImages.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+    
+    // Criar estrutura do slider
+    container.innerHTML = `
+      <div class="slider-wrapper">
+        <button class="slider-btn prev-btn" id="prevSlide">❮</button>
+        <div class="slider" id="slider"></div>
+        <button class="slider-btn next-btn" id="nextSlide">❯</button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    `;
+    
+    // Se tiver apenas 1 imagem, adiciona classe single-image
+    if (validImages.length === 1) {
+      container.classList.add('single-image');
+    }
+    
+    const slider = document.getElementById('slider');
+    const sliderDots = document.getElementById('sliderDots');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    
+    // Carregar slides
+    validImages.forEach((imgSrc, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = `Slide ${index + 1}`;
+      img.onerror = function() {
+        this.src = 'https://via.placeholder.com/800x400?text=Sem+Imagem';
+      };
+      slide.appendChild(img);
+      slider.appendChild(slide);
+      
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.dataset.index = index;
+      dot.addEventListener('click', () => goToSlide(index));
+      sliderDots.appendChild(dot);
+    });
+    
+    function updateSlider() {
+      if (!slider) return;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    function goToSlide(index) {
+      if (validImages.length <= 1) return;
+      if (index < 0) {
+        currentIndex = validImages.length - 1;
+      } else if (index >= validImages.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      updateSlider();
+      resetAutoSlide();
+    }
+    
+    function nextSlide() {
+      if (validImages.length <= 1) return;
+      goToSlide(currentIndex + 1);
+    }
+    
+    function prevSlide() {
+      if (validImages.length <= 1) return;
+      goToSlide(currentIndex - 1);
+    }
+    
+    function startAutoSlide() {
+      if (validImages.length <= 1) return;
+      autoSlideInterval = setInterval(() => {
+        nextSlide();
+      }, 2000);
+    }
+    
+    function resetAutoSlide() {
+      if (validImages.length <= 1) return;
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+    
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    updateSlider();
+    startAutoSlide();
+    
+    window.addEventListener('resize', () => updateSlider());
+  }
+  
+  // Inicializar slider
+  initSlider();
+</script>
+</body>
+</html>
